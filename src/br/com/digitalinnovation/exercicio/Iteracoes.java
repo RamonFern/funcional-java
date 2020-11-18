@@ -1,5 +1,7 @@
 package br.com.digitalinnovation.exercicio;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -12,6 +14,16 @@ public class Iteracoes {
 		//imprimirNomesFiltrados(nomes);
 		imprimirTodosNomes(nomes);
 		imprimirDobroDeCadaNumeroLista(numeros);
+		
+		List<String> profissoes = new ArrayList<String>();
+		profissoes.add("Desenvolvedor");
+		profissoes.add("Gerente de Projeto");
+		profissoes.add("Testador");
+		profissoes.add("Gerente de Qualidade");
+		
+		profissoes.stream()
+			.filter(profissao -> profissao.startsWith("Gerente"))
+			.forEach(System.out::println);
 	}
 
 
@@ -46,6 +58,8 @@ public class Iteracoes {
 		for (Integer numero : numeros) {
 			System.out.println(numero * 2);
 		}
+		Stream.of(numeros).map(numero -> numero * 2)
+							.forEach(System.out::println);
 	}
 
 }
